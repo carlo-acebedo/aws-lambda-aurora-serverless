@@ -7,10 +7,10 @@ client = boto3.client('rds-data')
 def lambda_handler(event, context):
     response = client.execute_statement(
     continueAfterTimeout=True,
-    database='tutorialsdojo_db',
-    resourceArn=os.environ['CLUSTER'],
+    database= ## INSERT Database Name ##,
+    resourceArn= ## INSERT DB Cluster Arn Here ##,
     schema='',
-    secretArn=os.environ['SECRET'],
+    secretArn= ## INSERT secret Arn from Secret Manager Here ##,
     sql='SELECT * from tdojo_associate_courses')
     
     
